@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>지원사업 찾기 · 예비창업패키지부터 40대 창업 지원사업까지 · 거상 창업내비</title>
+<meta name="description" content="창업 단계와 분야, 연령으로 지원사업을 찾아보십시오. 예비창업패키지와 중장년 창업 지원을 포함해, 39세 이후에도 신청 가능한 40대 창업 지원사업만 따로 보실 수 있습니다." />
+<!-- og:start  카카오톡 · 페이스북 등에 링크를 붙였을 때 보이는 정보입니다 -->
+<link rel="canonical" href="https://woodlaws.github.io/geosang-navi/support.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="거상 창업내비" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:title" content="지원사업 찾기 · 예비창업패키지부터 40대 창업 지원사업까지 · 거상 창업내비" />
+<meta property="og:description" content="창업 단계와 분야, 연령으로 지원사업을 찾아보십시오. 예비창업패키지와 중장년 창업 지원을 포함해, 39세 이후에도 신청 가능한 40대 창업 지원사업만 따로 보실 수 있습니다." />
+<meta property="og:url" content="https://woodlaws.github.io/geosang-navi/support.html" />
+<meta property="og:image" content="https://woodlaws.github.io/geosang-navi/images/og-cover.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<!-- og:end -->
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ===== 머리글 ===== -->
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="logo" href="index.html">거상 <span>창업내비</span></a>
+    <nav class="site-nav">
+      <a href="index.html">창업 7단계</a>
+      <a href="support.html" class="is-active">지원사업</a>
+      <a href="library.html">서식 자료실</a>
+      <a href="check.html">자가진단</a>
+      <a href="expert.html">전문가 소개</a>
+    </nav>
+    <a class="header-cta" href="contact.html">무료 상담</a>
+  </div>
+</header>
+
+<main>
+  <!-- ===== 상단 ===== -->
+  <section class="page-head">
+    <div class="wrap">
+      <h1>지원사업 찾기</h1>
+      <p>지금 계신 단계와 조건에 맞는 지원사업만 골라 보실 수 있습니다.</p>
+    </div>
+  </section>
+
+  <!-- ===== 조건 고르기 ===== -->
+  <section class="filter-sec">
+    <div class="wrap">
+      <div class="filters">
+        <div class="filter">
+          <label for="f-stage">단계</label>
+          <select id="f-stage">
+            <option value="all">전체 단계</option>
+            <option value="0">0단계 퇴사·은퇴 준비기</option>
+            <option value="1">1단계 예비창업기</option>
+            <option value="2">2단계 설립·등록기</option>
+            <option value="3">3단계 생존기</option>
+            <option value="4">4단계 성장기</option>
+            <option value="5">5단계 도약기</option>
+            <option value="6">6단계 위기·재도전기</option>
+          </select>
+        </div>
+
+        <div class="filter">
+          <label for="f-field">분야</label>
+          <select id="f-field">
+            <option value="all">전체 분야</option>
+            <!-- 분야 목록은 data/support.js 에서 채워집니다 -->
+          </select>
+        </div>
+
+        <div class="filter">
+          <label for="f-age">연령</label>
+          <select id="f-age">
+            <option value="all">전체 연령</option>
+            <option value="youth39">만 39세 이하</option>
+            <option value="over40">40세 이상 가능</option>
+            <option value="any">연령 무관</option>
+          </select>
+        </div>
+
+        <div class="filter">
+          <label for="f-sort">정렬</label>
+          <select id="f-sort">
+            <option value="deadline">마감 임박순</option>
+            <option value="name">이름순</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="filter-bottom">
+        <label class="switch" for="f-alt">
+          <input type="checkbox" id="f-alt" />
+          <span class="switch__box"></span>
+          <span class="switch__text">
+            <strong>39세 이후 대안만 보기</strong>
+            <em>청년 전용 사업을 숨기고, 40세 이상도 신청할 수 있는 사업만 표시합니다.</em>
+          </span>
+        </label>
+        <button type="button" class="btn-reset" id="f-reset">조건 초기화</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 목록 ===== -->
+  <section class="sec">
+    <div class="wrap">
+      <p class="result-count" id="support-count"></p>
+      <ul class="sp-list" id="support-list"></ul>
+
+      <p class="support__caution">
+        공고 시기와 지원 요건은 해마다 바뀝니다. 신청 전에 반드시 주관 기관의 원문 공고를 확인해 주십시오.
+        아직 채워지지 않은 항목은 [대괄호]로 표시해 두었습니다.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== 하단 ===== -->
+  <section class="cta">
+    <div class="wrap">
+      <h2>어느 사업을 신청해야 할지 모르시겠습니까?</h2>
+      <p>상황을 말씀해 주시면 지금 신청 가능한 사업을 정리해 드립니다.</p>
+      <a class="btn-cta" href="contact.html?from=support">무료 상담 신청</a>
+      <p class="cta__sub"><a href="check.html">먼저 내 단계부터 진단받기 →</a></p>
+    </div>
+  </section>
+</main>
+
+<!-- ===== 꼬리글 ===== -->
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="site-footer__logo">거상 창업내비</p>
+    <p>창업 준비부터 재도전까지, 단계마다 무엇을 해야 하는지 안내합니다.</p>
+    <p>상호 [상호명] · 대표 [대표자명] · 사업자등록번호 [번호] · 주소 [주소] · 연락처 [연락처]</p>
+    <div class="site-footer__links">
+      <a href="support.html">지원사업</a>
+      <a href="library.html">서식 자료실</a>
+      <a href="check.html">자가진단</a>
+      <a href="scenario-youth.html">청년 창업</a>
+      <a href="scenario-senior.html">중장년 창업</a>
+      <a href="expert.html">전문가 소개</a>
+      <a href="contact.html">상담 문의</a>
+    </div>
+  </div>
+</footer>
+
+<script src="data/support.js"></script>
+<script src="js/support.js"></script>
+</body>
+</html>
