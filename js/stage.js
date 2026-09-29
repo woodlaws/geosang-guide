@@ -1,5 +1,5 @@
 /* ============================================================
-   거상 창업내비 — 단계 상세 페이지 공통 스크립트
+   거상창업가이드 — 단계 상세 페이지 공통 스크립트
    stage-0.html ~ stage-6.html 7개 페이지가 이 파일 하나를 씁니다.
    내용은 data/stages.js 에서 가져옵니다.
    ============================================================ */
@@ -27,7 +27,7 @@
   }
 
   /* --- 체크 상태를 이 브라우저에 저장 / 불러오기 --- */
-  var STORE_KEY = "geosang-navi:stage-" + current + ":todos";
+  var STORE_KEY = "geosang-guide:stage-" + current + ":todos";
 
   function loadChecked() {
     try {
@@ -263,7 +263,7 @@
   root.innerHTML =
     renderHead() + renderProgress() + renderTodos() + renderDocs() + renderSupport() + renderCta();
 
-  document.title = current + "단계 " + stage.name + " · 거상 창업내비";
+  document.title = current + "단계 " + stage.name + " · 거상창업가이드";
 
   /* ============================================================
      체크박스 동작

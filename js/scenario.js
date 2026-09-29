@@ -1,5 +1,5 @@
 /* ============================================================
-   거상 창업내비 — 페르소나 시나리오 페이지 공통 스크립트
+   거상창업가이드 — 페르소나 시나리오 페이지 공통 스크립트
    scenario-youth.html / scenario-senior.html 두 페이지가 함께 씁니다.
 
    세로 타임라인(0~6단계)을 data/stages.js 내용으로 만듭니다.
@@ -31,7 +31,7 @@
 
   /* --- 체크 상태 저장 (단계 페이지와 같은 칸을 씁니다) --- */
   function storeKey(no) {
-    return "geosang-navi:stage-" + no + ":todos";
+    return "geosang-guide:stage-" + no + ":todos";
   }
 
   function loadChecked(no) {
